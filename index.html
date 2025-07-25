@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outil de Prise de Décision Tori Dey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1 id="title">Outil de Prise de Décision Tori Dey</h1>
+    <img src="compass.png" alt="Boussole" class="compass">
+    <div class="lang-toggle">
+      <button onclick="switchLang('en')">English</button>|
+      <button onclick="switchLang('fr')">Français</button>
+    </div>
+  </header>
+
+  <form id="torideForm" action="https://formspree.io/f/xblkjnad" method="POST">
+    <label>Adresse e-mail <input type="email" name="email" required /></label>
+    <label>Institution/Affiliation <input type="text" name="affiliation" required /></label>
+    <label>Pays <input type="text" name="country" required /></label>
+
+    <label>Quel est votre public principal ?
+      <select name="audience">
+        <option value="Policymakers">Décideurs politiques</option>
+        <option value="Practitioners">Praticiens</option>
+        <option value="People">Citoyens</option>
+        <option value="Researchers">Chercheurs</option>
+        <option value="Donors">Bailleurs de fonds/Agences de développement</option>
+      </select>
+    </label>
+
+    <label>Y a-t-il d'autres groupes ou parties prenantes que vous souhaitez atteindre ?
+      <textarea name="other_audience"></textarea>
+    </label>
+
+    <label>De quoi voulez-vous que l’histoire parle ?
+      <select name="story_type" id="story_type">
+        <option value="methodology">L’approche et la méthodologie utilisées / notre manière de travailler</option>
+        <option value="results">La manière dont nous avons travaillé et les résultats</option>
+        <option value="impact">L’impact de notre travail sur la vie des gens</option>
+        <option value="creativity">Comment les données scientifiques peuvent inspirer la créativité artistique</option>
+      </select>
+    </label>
+
+    <label>Quel message souhaitez-vous transmettre ?
+      <textarea name="message"></textarea>
+    </label>
+
+    <label>Y a-t-il un autre message que vous souhaitez transmettre ?
+      <textarea name="additional_message"></textarea>
+    </label>
+
+    <label>Pourquoi voulez-vous raconter cette histoire ?
+      <textarea name="why_story"></textarea>
+    </label>
+
+    <label>Y a-t-il d'autres raisons pour lesquelles vous voulez raconter cette histoire ?
+      <textarea name="other_reasons"></textarea>
+    </label>
+
+    <label>Comment voulez-vous raconter cette histoire ?
+      <textarea name="how_story"></textarea>
+    </label>
+
+    <label>Quand voulez-vous raconter cette histoire ?
+      <textarea name="when_story"></textarea>
+    </label>
+
+    <label>Où voulez-vous raconter cette histoire ?
+      <textarea name="where_story"></textarea>
+    </label>
+
+    <input type="hidden" name="response" id="response" value="No Response">
+
+    <button type="submit">Soumettre</button>
+    <div class="message" id="confirmation"></div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
